@@ -1,0 +1,37 @@
+<h1>Przepis</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nazwa</th>
+            <td>{{ entity.nazwa }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% for e in entity.sp %}
+{{ e.skladnik }}
+{% endfor %}
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('przepis') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('przepis_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('przepis_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

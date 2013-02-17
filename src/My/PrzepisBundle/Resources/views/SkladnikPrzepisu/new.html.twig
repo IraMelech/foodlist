@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>	
+<head>
+	<title>Tytuł</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="{{ asset('bundles/genemuform/select2/select2.js') }}"></script>
+	<link rel="stylesheet" href="{{ asset('bundles/genemuform/select2/select2.css') }}" media="screen" />
+	<script>
+	        $(document).ready(function() { $("#my_przepisbundle_skladnikprzepisutype_skladnik").select2({
+				placeholder: "chuj",
+                allowClear: false
+				}); });
+	 </script>
+</head>
+<body>
+
+
+<h1>SkladnikPrzepisu creation</h1>
+
+<form action="{{ path('skladnikprzepisu_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('skladnikprzepisu') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>

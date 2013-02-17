@@ -1,0 +1,65 @@
+{% extends 'MyPrzepisBundle::layout.html.twig' %}
+{% block title %}Dodawanie przepisu{% endblock %}
+{% block files %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+{% endblock %}
+{% block content %}
+
+
+
+<h1>Przepis creation</h1>
+
+<form action="{{ path('przepis_create') }}" method="post" {{ form_enctype(form) }}>
+    
+    {{ form_widget(form) }}
+    {{ form_rest(form) }}
+
+    <a href="#" id="add_ingredient">ingredient</a>
+    <a href="#" id="add_step">step</a>
+    <a href="#" id="add_image">image</a>
+    <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('przepis') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+<script>
+
+var SkladnikCollectionHolder = $('#przepis_sp');
+var SkladnikPrototype = SkladnikCollectionHolder.attr('data-prototype');
+var SkladnikAddLink = $('#add_ingredient');
+
+var KrokCollectionHolder = $('#przepis_krok');
+var KrokPrototype = KrokCollectionHolder.attr('data-prototype');
+var KrokAddLink = $('#add_step');
+
+var ImageCollectionHolder = $('#przepis_image');
+var ImagePrototype = ImageCollectionHolder.attr('data-prototype');
+var ImageAddLink = $('#add_image');
+
+jQuery(document).ready(function() {
+    SkladnikAddLink.on('click', function(e){
+        e.preventDefault();
+        var SkladnikNewPrototype = SkladnikPrototype.replace(/__name__label__/g, SkladnikCollectionHolder.children().length + 1);
+        SkladnikNewPrototype = SkladnikNewPrototype.replace(/__name__/g, SkladnikCollectionHolder.children().length);
+        SkladnikCollectionHolder.append(SkladnikNewPrototype);
+    });
+    KrokAddLink.on('click', function(e){
+        e.preventDefault();
+        var KrokNewPrototype = KrokPrototype.replace(/__name__/g, KrokCollectionHolder.children().length);
+        KrokCollectionHolder.append(KrokNewPrototype);
+    });
+    ImageAddLink.on('click', function(e){
+        e.preventDefault();
+        var ImageNewPrototype = ImagePrototype.replace(/__name__/g, ImageCollectionHolder.children().length);
+        ImageCollectionHolder.append(ImageNewPrototype);
+    });
+});
+</script>
+
+{% endblock %}

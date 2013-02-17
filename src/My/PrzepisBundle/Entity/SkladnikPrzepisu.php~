@@ -1,0 +1,44 @@
+<?php
+
+namespace My\PrzepisBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SkladnikPrzepisu
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class SkladnikPrzepisu
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Skladnik", inversedBy="sp")
+     * @ORM\JoinColumn(name="skladnik_id", referencedColumnName="id")
+     * */
+    protected $skladnik;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Przepis", inversedBy="sp")
+     * @ORM\JoinColumn(name="przepis_id", referencedColumnName="id")
+     * */
+    protected $przepis;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ilosc", type="integer")
+     */
+    private $ilosc;
+
+
+}

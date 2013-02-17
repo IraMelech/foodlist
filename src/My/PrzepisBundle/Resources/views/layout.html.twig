@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name=description content="">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel=author href="humans.txt">
+        <link rel="stylesheet" href="{{ asset('css/style-apperance.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style-position.css') }}">
+        {% block files %}{% endblock %}
+    </head>
+    <body>
+      <div id="body">
+          <div id="menu">
+                <div>
+                    
+                        <div class="button-yellow"><a href="#">Główna</a></div>
+                        <div class="button-yellow"><a href="#">Główna</a></div>
+                </div>
+                <div>
+                    <div class="button-red"><a href="#">Zaloguj się</a></div>
+                </div>
+          </div>
+          <div class="title-header">tytul</div>
+
+          <div id="main">
+                    {% block content %}
+                    
+                    {% endblock %}
+
+          </div>
+      </div>
+    </body>
+</html>

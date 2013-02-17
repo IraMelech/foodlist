@@ -1,0 +1,8 @@
+
+{% for result in results %}
+{{ result.id }}
+{{ result. nazwa }}
+{% for skladniki in result.sp %}
+{{skladniki.skladnik.nazwa }}
+{% endfor %}
+{% endfor %}
