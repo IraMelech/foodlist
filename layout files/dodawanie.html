@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="styleapp.css">
 	<link rel="stylesheet" href="stylepos.css">
 	<link rel="stylesheet" href="css/fonts/style.css" />
+	<script src="js/jquery.js"></script>
 	<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 </head>
 <body>
@@ -30,9 +31,12 @@
 	</div>
 	<div id="content">
 		<form id="add_recipe"action="asd">
-			<form action="asd">
 				<label id="nazwa">Tytuł: <input type="text"></label>
-				<div id="skladniki">
+				<div id="skladniki" class="add_new_brick" data-prototype="&lt;div class=&quot;form_add_brick&quot;&gt;&lt;div class=&quot;iconremove&quot;&gt;usun&lt;/div&gt;
+						&lt;label for=&quot;skladnik&quot; class=&quot;skladnik&quot;&gt;Wybierz skladnik:&lt;input type=&quot;text&quot;&gt;&lt;/label&gt;
+						&lt;label for=&quot;ilosc=&quot; class=&quot;ilosc&quot;&gt;Podaj ilość:&lt;input type=&quot;text=&quot;&gt;&lt;/label&gt;
+						&lt;label for=&quot;miara&quot; class=&quot;miara&quot;&gt;Wybierz miare&lt;input type=&quot;text&quot;&gt;&lt;/label&gt;
+					&lt;/div&gt;">
 					Składniki
 					
 					<!-- (div.form_add_brick>(label.skladnik[for="skladnik"]{Wybierz skladnik:}(>input[type="text"])+label.ilosc[for="ilosc"]{Podaj ilość:}(>input[type="text"])+label.miara[for="miara"]{Wybierz miare}(>input[type="text"])))*4
@@ -41,43 +45,71 @@
 
 					div#zdjecia>(div.form_add_brick>input[type="file"])*5-->
 					<div class="form_add_brick">
+						<div class="iconremove">usun</div>
 						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
 						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
 						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
 					</div>
 					<div class="form_add_brick">
+						<div class="iconremove">usun</div>
 						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
 						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
 						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
 					</div>
 					<div class="form_add_brick">
+						<div class="iconremove">usun</div>
 						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
 						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
 						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
 					</div>
 					<div class="form_add_brick">
+						<div class="iconremove">usun</div>
 						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
 						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
 						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
 					</div>
+					<a href="#">&#x58;</a>
 				</div>
-					<div id="kroki">Sposób przygotowania:
-						<div class="form_add_brick"><label for="" class="opis">krok1<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
-						<div class="form_add_brick"><label for="" class="opis">krok2<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
-						<div class="form_add_brick"><label for="" class="opis">krok3<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
-						<div class="form_add_brick"><label for="" class="opis">krok4<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+					<div id="kroki" class="add_new_brick">Sposób przygotowania:
+						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok1<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok2<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok3<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok4<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+
+					<a href="#">&#x49;</a>
 					</div>
-					<div id="zdjecia">
+					<div id="zdjecia" class="add_new_brick">
 						Zdjęcia:
 						<input type="file">
 						<input type="file">
 						<input type="file">
 						<input type="file">
 						<input type="file">
+
+					<a href="#">&#x65;</a>
 					</div>
+				<button type="submit"class="iconcheckmark">Zapisz</button>
 				
 			</form>
 		</form>
 	</div>
+	<script>
+		$(document).ready(function(){
+			$(".add_new_brick a").on("click", function(e){
+				e.preventDefault();
+				var holder=$(this).parent();
+				var prototype=holder.attr("data-prototype");
+				$(this).before(prototype);
+				
+				$(".add_new_brick .iconremove").on("click", function(e){
+					e.preventDefault();
+					var holder=$(this).parent();
+					holder.remove();
+				});
+			});
+
+			
+		});
+	</script>
 </body>
 </html>

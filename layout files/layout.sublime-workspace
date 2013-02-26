@@ -1,0 +1,364 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"skla",
+				"skladnik_brick"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"border-",
+				"border-left"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"pr",
+				"prototype"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"tex",
+				"textarea"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"bu",
+				"button-yellow"
+			],
+			[
+				"s",
+				"skladnik"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"About"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"twig",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntax html",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 118.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/adocs/structure.xml",
+		"/C/Program Files (x86)/Steam/SteamApps/bartholomeus2/counter-strike source/cstrike/cfg/buypresets_ct.vdf",
+		"/C/xampp/htdocs/a layout/szukaj.html",
+		"/C/xampp/htdocs/a layout/logowanie.html",
+		"/C/xampp/htdocs/a layout/przepis.html",
+		"/C/xampp/htdocs/a layout/index.html",
+		"/C/xampp/htdocs/a layout/logowanie.htnk",
+		"/C/xampp/htdocs/layout/select2/select2.css",
+		"/C/xampp/htdocs/layout/select2/LICENSE",
+		"/C/Users/Bartek/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/layout/style-position.css",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Resources/views/Przepis/new.html.twig",
+		"/C/xampp/htdocs/a/app/config/config.yml",
+		"/C/xampp/htdocs/a/app/AppKernel.php",
+		"/C/xampp/htdocs/a/composer.json",
+		"/C/xampp/htdocs/index.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Form/KrokType.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Entity/Krok.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Controller/PrzepisController.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Form/SkladnikPrzepisuType.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Form/PrzepisType.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Entity/Document.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Entity/Przepis.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Resources/views/SkladnikPrzepisu/new.html.twig",
+		"/C/xampp/htdocs/layout/show.html",
+		"/C/xampp/htdocs/a/web/bundles/genemuform/select2/select2.css",
+		"/C/xampp/htdocs/a/web/bundles/genemuform/select2.js",
+		"/C/xampp/htdocs/a/web/uploads/documents/sprite.png",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Form/ImageType.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Resources/views/Default/upload.html.twig",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Controller/DefaultController.php",
+		"/C/Users/Bartek/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Bartek/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/D/qtor/B/Downloads/The.Prestige.2006.720p.Bluray.x264.anoXmous/The.Prestige.2006.720p.Bluray.x264.anoXmous.srt",
+		"/C/Users/Bartek/AppData/Roaming/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Form/PrzepisHandler.php",
+		"/C/xampp/htdocs/a/app/config/parameters.yml",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Entity/SkladnikPrzepisu.php",
+		"/C/xampp/htdocs/a/src/My/PrzepisBundle/Entity/Skladnik.php",
+		"/C/xampp/htdocs/a/app/config/routing.yml",
+		"/C/xampp/htdocs/brz/src/My/PrzepisBundle/Controller/DefaultController.php",
+		"/C/xampp/htdocs/brz/src/My/PrzepisBundle/Controller/KrokController.php"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\xampp\\htdocs\\a\\vendor"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"75",
+			"-1",
+			"content",
+			"class=\"input-empty\"",
+			"td",
+			"type=\"\"",
+			"1",
+			"color: #",
+			"button-white",
+			"border: 1px solid",
+			"box-shadow: 0px 0px 9px #d7ff91;",
+			"box-shadow",
+			"	box-shadow: 0px 0px 9px #d7ff91;\n",
+			"height",
+			"	\n",
+			"width: 80px;",
+			"padding: 5px 0px 0px 0px;",
+			"width: 100px;",
+			"ff9191",
+			"d7ff91",
+			"-1",
+			"FormHandlerInterface",
+			"przepis",
+			"Przepis",
+			"przepis",
+			"Przepis",
+			"przepis",
+			"Przepis",
+			"przepis",
+			"Przepis",
+			"przepis",
+			"Przepis",
+			"przepis"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"s",
+				"style-position.css"
+			],
+			[
+				"",
+				"style-position.css"
+			],
+			[
+				"sty",
+				"style-apperance.css"
+			],
+			[
+				"sto",
+				"style-position.css"
+			],
+			[
+				"in",
+				"index.html"
+			],
+			[
+				"default",
+				"src/My/PrzepisBundle/Controller/DefaultController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 140.0,
+	"status_bar_visible": true
+}
