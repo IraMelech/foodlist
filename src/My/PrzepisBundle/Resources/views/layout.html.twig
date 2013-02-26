@@ -8,25 +8,26 @@
         <link rel=author href="humans.txt">
         <link rel="stylesheet" href="{{ asset('css/style-apperance.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style-position.css') }}">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="{{ asset('js/select2/select2.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('js/select2/select2.css') }}">
         {% block files %}{% endblock %}
     </head>
     <body>
-      <div id="body">
-          <div id="menu">
-                <div>
-                    
-                        <div class="button-yellow"><a href="#">Główna</a></div>
-                        <div class="button-yellow"><a href="#">Główna</a></div>
-                </div>
-                <div>
-                    <div class="button-red"><a href="#">Zaloguj się</a></div>
-                </div>
-          </div>
-          <div class="title-header">tytul</div>
 
+    <a href="{{ path('index') }}">strona główna</a>
+    <a href="{{ path('przepis_new') }}">dodaj przepis </a>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ app.user.username }}
+        <a href="{{ path('fos_user_security_logout') }}">wyloguj</a>
+
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">login</a>
+     {% endif %} <div id="body">
+          
           <div id="main">
                     {% block content %}
-                    
+                      
                     {% endblock %}
 
           </div>

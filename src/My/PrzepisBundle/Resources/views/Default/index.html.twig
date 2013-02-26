@@ -1,1 +1,8 @@
-Hello {{ name }}!
+{% extends 'MyPrzepisBundle::layout.html.twig' %}
+{% block content %}
+<form action="{{ path('search_results') }}" method="get" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" value="Szukaj" />
+</form>
+{% endblock %}

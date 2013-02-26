@@ -37,7 +37,13 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/przepis/show, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/przepis/browse, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/przepis/, role: ROLE_USER }
+        - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/results, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/, role: ROLE_ADMIN }
         
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER

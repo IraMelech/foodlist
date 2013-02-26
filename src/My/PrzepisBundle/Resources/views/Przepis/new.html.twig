@@ -2,10 +2,11 @@
 {% block title %}Dodawanie przepisu{% endblock %}
 {% block files %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<link rel="stylesheet" href="{{ asset('js/select2/select2.css') }}">
 {% endblock %}
 {% block content %}
-
-
+{% include 'MyPrzepisBundle:Przepis:menu.html.twig' %}
 
 <h1>Przepis creation</h1>
 
@@ -61,5 +62,5 @@ jQuery(document).ready(function() {
     });
 });
 </script>
-
+<script src="{{ asset('js/select2/select2.js') }}"></script>
 {% endblock %}

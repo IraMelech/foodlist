@@ -514,17 +514,17 @@
         },
         {
             "name": "genemu/form-bundle",
-            "version": "v2.1.0",
+            "version": "v2.1.2",
             "target-dir": "Genemu/Bundle/FormBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genemu/GenemuFormBundle.git",
-                "reference": "v2.1.0"
+                "reference": "v2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/genemu/GenemuFormBundle/archive/v2.1.0.zip",
-                "reference": "v2.1.0",
+                "url": "https://api.github.com/repos/genemu/GenemuFormBundle/zipball/v2.1.2",
+                "reference": "v2.1.2",
                 "shasum": ""
             },
             "require": {
@@ -546,7 +546,7 @@
                 "symfony/mongodb-odm-bundle": "2.*",
                 "propel/propel-bundle": "*"
             },
-            "time": "2012-10-31 11:49:35",
+            "time": "2013-02-21 21:09:51",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {

@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+	padding: 0;
+	width:100%;
+}
+#menuspace1
+{
+	position:fixed;
+	width:80px;
+	min-height: 1980px;
+	background-color: #00b33b;
+	float:left;
+	padding-top:15px;
+}
+#menuspace2
+{
+	position:fixed;
+	margin-left: 80px;
+	width:170px;
+	min-height: 1980px;
+	float:left;
+	background-color: #2c2c34;
+}
+#content
+{
+	text-align: center;
+	margin: 0px 10px 0px 280px;
+}

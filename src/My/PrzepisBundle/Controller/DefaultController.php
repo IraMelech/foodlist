@@ -10,52 +10,60 @@ use My\PrzepisBundle\Entity\Przepis;
 use My\PrzepisBundle\Entity\SkladnikPrzepisu;
 use Symfony\Component\HttpFoundation\Request;
 use My\PrzepisBundle\Helpers\Search;
+
+
 class DefaultController extends Controller
 {
+
     /**
-     * @Route("/hello/{name}")
+     * @Route("/", name="index")
      * @Template()
      */
-    public function indexAction($name)
-    {
-        return array('name' => $name);
-    }
-    /**
-     * @Route("/test", name="test")
-     * @Template()
-     */
-	public function testAction(Request $request)
+	public function indexAction(Request $request)
 	{
 		$form = $this->createFormBuilder()
-				->add('nazwa', 'text')
 				->add('szukaj', 'entity', array(
 					'multiple' => true,
 					'class' => 'MyPrzepisBundle:Skladnik',
 					))
 				->getForm();
-
 
 
     return array('form' => $form->createView()
     	);
 	}
-	    /**
-     * @Route("/test2", name="test2")
+	/**
+     * @Route("/searchform", name="search_form")
      * @Template()
      */
-	public function test2Action(Request $request)
+	public function SearchAction(Request $request)
 	{
 		$form = $this->createFormBuilder()
-				->add('nazwa', 'text')
 				->add('szukaj', 'entity', array(
 					'multiple' => true,
 					'class' => 'MyPrzepisBundle:Skladnik',
 					))
 				->getForm();
-		
-		if ($request->isMethod('POST')) {
+
+
+    return array('form' => $form->createView()
+    	);
+	}
+	 /**
+     * @Route("/results", name="search_results")
+     * @Template()
+     */
+	public function resultsAction(Request $request)
+	{
+		$form = $this->createFormBuilder()
+				->add('szukaj', 'entity', array(
+					'multiple' => true,
+					'class' => 'MyPrzepisBundle:Skladnik',
+					))
+				->getForm();
+
+		if ($request->isMethod('GET')) {
 			$form->bind($request);
-		        if ($form->isValid()) {
 
 	            $data = $form->getData();
 	            $data = $data['szukaj'];
@@ -68,6 +76,6 @@ class DefaultController extends Controller
 		            'data' => $data,
 		        );	
 		        }
-		}
 	}
+
 }

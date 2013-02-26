@@ -44,7 +44,7 @@ class SkladnikController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('MyPrzepisBundle:SkladnikPrzepisu')->find($id);
+        $entity = $em->getRepository('MyPrzepisBundle:Skladnik')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Skladnik entity.');

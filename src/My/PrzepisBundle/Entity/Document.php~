@@ -67,7 +67,7 @@ class Document
     {
         // get rid of the __DIR__ so it doesn't screw up
         // when displaying uploaded doc/image in the view.
-        return 'uploads/documents';
+        return 'images';
     }
 	public function upload()
 	{
@@ -75,7 +75,8 @@ class Document
 	    if (null === $this->file) {
 	        return;
 	    }
-	
+        // name of the file 
+        $name = uniqid().'.jpg';
 	    // use the original file name here but you should
 	    // sanitize it at least to avoid any security issues
 	
@@ -83,13 +84,37 @@ class Document
 	    // target filename to move to
 	    $this->file->move(
 	        $this->getUploadRootDir(),
-	        $this->file->getClientOriginalName()
+	        $name
 	    );
 	
 	    // set the path property to the filename where you've saved the file
-	    $this->path = $this->file->getClientOriginalName();
+	    $this->path = $name;
 	
 	    // clean up the file property as you won't need it anymore
 	    $this->file = null;
 	}
+
+
+    /**
+     * Set przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     * @return Document
+     */
+    public function setPrzepis(\My\PrzepisBundle\Entity\Przepis $przepis = null)
+    {
+        $this->przepis = $przepis;
+    
+        return $this;
+    }
+
+    /**
+     * Get przepis
+     *
+     * @return \My\PrzepisBundle\Entity\Przepis 
+     */
+    public function getPrzepis()
+    {
+        return $this->przepis;
+    }
 }

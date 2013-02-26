@@ -1,3 +1,7 @@
+{% extends 'MyPrzepisBundle::layout.html.twig' %}
+{% block content %}
+
+
 <h1>Przepis list</h1>
 
 <table class="records_list">
@@ -6,22 +10,29 @@
             <th>Id</th>
             <th>Nazwa</th>
             <th>Actions</th>
+            <th>image</th>
         </tr>
     </thead>
     <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('przepis_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td><a href="{{ path('przepis_show', { 'slug': entity.slug }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.nazwa }}</td>
             <td>
                 <ul>
                     <li>
-                        <a href="{{ path('przepis_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('przepis_show', { 'slug': entity.slug }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('przepis_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('przepis_edit', { 'slug': entity.slug }) }}">edit</a>
                     </li>
                 </ul>
+            </td>
+            <td>
+
+                {% for img in entity.image %}
+                <img src="{{ asset('images/') }}{{ img.path}}" alt="" width="100px">
+                {% endfor %}
             </td>
         </tr>
     {% endfor %}
@@ -35,3 +46,5 @@
         </a>
     </li>
 </ul>
+
+{% endblock %}

@@ -14,9 +14,57 @@ class User extends BaseUser
 	* @ORM\GeneratedValue(strategy="AUTO")
 	*/
 	protected $id;
+
+	/**
+     * @ORM\OneToMany(targetEntity="My\PrzepisBundle\Entity\Przepis" , mappedBy="user" , cascade={"all"})
+     * */
+    protected $przepis;
 	
 	public function __construct()
 	{
 		parent::__construct();
 	}
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     * @return User
+     */
+    public function addPrzepis(\My\PrzepisBundle\Entity\Przepis $przepis)
+    {
+        $this->przepis[] = $przepis;
+    
+        return $this;
+    }
+
+    /**
+     * Remove przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     */
+    public function removePrzepis(\My\PrzepisBundle\Entity\Przepis $przepis)
+    {
+        $this->przepis->removeElement($przepis);
+    }
+
+    /**
+     * Get przepis
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPrzepis()
+    {
+        return $this->przepis;
+    }
 }

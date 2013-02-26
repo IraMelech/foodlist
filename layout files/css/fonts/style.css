@@ -1,0 +1,309 @@
+@font-face {
+	font-family: 'icons';
+	src:url('fonts/icons.eot');
+	src:url('fonts/icons.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icons.woff') format('woff'),
+		url('fonts/icons.ttf') format('truetype'),
+		url('fonts/icons.svg#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon"]:before {
+*/
+.iconheart:before, .iconstar:before, .iconstar-empty:before, .iconsearch:before, .iconenvelope:before, .iconok:before, .iconremove:before, .iconcog:before, .icontrash:before, .iconhome:before, .iconcomment:before, .iconangle-right:before, .iconangle-left:before, .iconhome-2:before, .iconpencil:before, .iconhome-3:before, .iconsupport:before, .iconclock:before, .iconcalendar:before, .iconzoom-in:before, .iconzoom-out:before, .iconcog-2:before, .iconfacebook:before, .icongoogle-plus:before, .icontwitter:before, .iconlist-ol:before, .iconsignal:before, .iconuser-add:before, .icontarget:before, .icongrid:before, .iconlist:before, .iconbars:before, .iconstats:before, .iconmove:before, .icontrashcan:before, .icongrid-2:before, .iconlist-2:before, .iconfloppy:before, .iconclock-2:before, .iconcamera:before, .iconadd-to-list:before, .iconwrench:before, .iconsettings:before, .iconstats-2:before, .iconbars-2:before, .iconbars-3:before, .iconfire:before, .iconleaf:before, .iconglass:before, .iconairplane:before, .iconshield:before, .iconlightning:before, .iconeye:before, .iconwarning:before, .iconnotification:before, .iconplus:before, .iconminus:before, .iconuser:before, .iconusers:before, .iconinfo:before, .iconquestion-mark:before, .iconimage:before, .iconbars-4:before, .iconbars-alt:before, .iconpencil-2:before, .iconsearch-2:before, .iconcheckmark:before, .iconclose:before, .iconpicture:before, .iconheart-2:before, .iconcircles:before, .iconlink:before, .iconclock-3:before, .iconfeather:before, .iconeye-2:before, .iconskull:before, .icontrashcan-2:before, .iconsupport-2:before, .iconcone:before, .iconkey:before, .iconinfo-2:before, .iconlamp:before, .iconsettings-2:before, .iconbadge:before, .iconleaf-2:before, .iconstats-3:before, .iconpicture-2:before, .iconheart-3:before, .iconkey-2:before, .iconpencil-3:before, .iconcomment-alt:before {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	padding-right: 5px;
+}
+.iconheart:before {
+	content: "\21";
+}
+.iconstar:before {
+	content: "\22";
+}
+.iconstar-empty:before {
+	content: "\23";
+}
+.iconsearch:before {
+	content: "\24";
+}
+.iconenvelope:before {
+	content: "\25";
+}
+.iconok:before {
+	content: "\26";
+}
+.iconremove:before {
+	content: "\27";
+}
+.iconcog:before {
+	content: "\28";
+}
+.icontrash:before {
+	content: "\29";
+}
+.iconhome:before {
+	content: "\2a";
+}
+.iconcomment:before {
+	content: "\2b";
+}
+.iconangle-right:before {
+	content: "\2c";
+}
+.iconangle-left:before {
+	content: "\2d";
+}
+.iconhome-2:before {
+	content: "\2e";
+}
+.iconpencil:before {
+	content: "\2f";
+}
+.iconhome-3:before {
+	content: "\30";
+}
+.iconsupport:before {
+	content: "\31";
+}
+.iconclock:before {
+	content: "\32";
+}
+.iconcalendar:before {
+	content: "\33";
+}
+.iconzoom-in:before {
+	content: "\34";
+}
+.iconzoom-out:before {
+	content: "\35";
+}
+.iconcog-2:before {
+	content: "\36";
+}
+.iconfacebook:before {
+	content: "\37";
+}
+.icongoogle-plus:before {
+	content: "\38";
+}
+.icontwitter:before {
+	content: "\39";
+}
+.iconlist-ol:before {
+	content: "\3a";
+}
+.iconsignal:before {
+	content: "\3b";
+}
+.iconuser-add:before {
+	content: "\3c";
+}
+.icontarget:before {
+	content: "\3d";
+}
+.icongrid:before {
+	content: "\3e";
+}
+.iconlist:before {
+	content: "\3f";
+}
+.iconbars:before {
+	content: "\40";
+}
+.iconstats:before {
+	content: "\41";
+}
+.iconmove:before {
+	content: "\42";
+}
+.icontrashcan:before {
+	content: "\43";
+}
+.icongrid-2:before {
+	content: "\44";
+}
+.iconlist-2:before {
+	content: "\45";
+}
+.iconfloppy:before {
+	content: "\46";
+}
+.iconclock-2:before {
+	content: "\47";
+}
+.iconcamera:before {
+	content: "\48";
+}
+.iconadd-to-list:before {
+	content: "\49";
+}
+.iconwrench:before {
+	content: "\4a";
+}
+.iconsettings:before {
+	content: "\4b";
+}
+.iconstats-2:before {
+	content: "\4c";
+}
+.iconbars-2:before {
+	content: "\4d";
+}
+.iconbars-3:before {
+	content: "\4e";
+}
+.iconfire:before {
+	content: "\4f";
+}
+.iconleaf:before {
+	content: "\50";
+}
+.iconglass:before {
+	content: "\51";
+}
+.iconairplane:before {
+	content: "\52";
+}
+.iconshield:before {
+	content: "\53";
+}
+.iconlightning:before {
+	content: "\54";
+}
+.iconeye:before {
+	content: "\55";
+}
+.iconwarning:before {
+	content: "\56";
+}
+.iconnotification:before {
+	content: "\57";
+}
+.iconplus:before {
+	content: "\58";
+}
+.iconminus:before {
+	content: "\59";
+}
+.iconuser:before {
+	content: "\5a";
+}
+.iconusers:before {
+	content: "\5b";
+}
+.iconinfo:before {
+	content: "\5c";
+}
+.iconquestion-mark:before {
+	content: "\5d";
+}
+.iconimage:before {
+	content: "\5e";
+}
+.iconbars-4:before {
+	content: "\5f";
+}
+.iconbars-alt:before {
+	content: "\60";
+}
+.iconpencil-2:before {
+	content: "\61";
+}
+.iconsearch-2:before {
+	content: "\62";
+}
+.iconcheckmark:before {
+	content: "\63";
+}
+.iconclose:before {
+	content: "\64";
+}
+.iconpicture:before {
+	content: "\65";
+}
+.iconheart-2:before {
+	content: "\66";
+}
+.iconcircles:before {
+	content: "\67";
+}
+.iconlink:before {
+	content: "\68";
+}
+.iconclock-3:before {
+	content: "\69";
+}
+.iconfeather:before {
+	content: "\6a";
+}
+.iconeye-2:before {
+	content: "\6b";
+}
+.iconskull:before {
+	content: "\6c";
+}
+.icontrashcan-2:before {
+	content: "\6d";
+}
+.iconsupport-2:before {
+	content: "\6e";
+}
+.iconcone:before {
+	content: "\6f";
+}
+.iconkey:before {
+	content: "\70";
+}
+.iconinfo-2:before {
+	content: "\71";
+}
+.iconlamp:before {
+	content: "\72";
+}
+.iconsettings-2:before {
+	content: "\73";
+}
+.iconbadge:before {
+	content: "\74";
+}
+.iconleaf-2:before {
+	content: "\75";
+}
+.iconstats-3:before {
+	content: "\76";
+}
+.iconpicture-2:before {
+	content: "\77";
+}
+.iconheart-3:before {
+	content: "\78";
+}
+.iconkey-2:before {
+	content: "\79";
+}
+.iconpencil-3:before {
+	content: "\7a";
+}
+.iconcomment-alt:before {
+	content: "\7b";
+}

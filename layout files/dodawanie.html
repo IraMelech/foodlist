@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="styleapp.css">
+	<link rel="stylesheet" href="stylepos.css">
+	<link rel="stylesheet" href="css/fonts/style.css" />
+	<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
+</head>
+<body>
+	<div id="menuspace1">
+		<a href="#"><span class="icons">&#x30;</span>home</a>
+		<a href="#"><span class="icons">&#x3e;</span>przeglądaj</a>
+		<a href="#"><span class="icons">&#x24;</span>szukaj</a>
+		<a href="#"><span class="icons">&#x5a;</span>zaloguj</a>
+		<a href="#"><span class="icons">&#x49;</span>dodaj przepis</a>
+		<a href="#"><span class="icons">&#x5c;</span>informacje</a>
+	</div>
+	<div id="menuspace2">
+		<h3>Konto</h3>
+		<a href="#" class="iconcog actuallyin">home</a>
+		<a href="#" class="">przeglądaj</a>
+		<a href="#" class="iconsearch ">szukaj</a>
+		<a href="#">odnoścnik4</a>
+		<a href="#">odnoścnik5</a>
+		
+	</div>
+	<div id="content">
+		<form id="add_recipe"action="asd">
+			<form action="asd">
+				<label id="nazwa">Tytuł: <input type="text"></label>
+				<div id="skladniki">
+					Składniki
+					
+					<!-- (div.form_add_brick>(label.skladnik[for="skladnik"]{Wybierz skladnik:}(>input[type="text"])+label.ilosc[for="ilosc"]{Podaj ilość:}(>input[type="text"])+label.miara[for="miara"]{Wybierz miare}(>input[type="text"])))*4
+
+					div#kroki{Sposób przygotowania:}>div.form_add_brick(>label.opis{krok$}(>textarea)+label.czas{czas:}>input)*4 
+
+					div#zdjecia>(div.form_add_brick>input[type="file"])*5-->
+					<div class="form_add_brick">
+						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
+						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
+						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
+					</div>
+					<div class="form_add_brick">
+						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
+						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
+						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
+					</div>
+					<div class="form_add_brick">
+						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
+						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
+						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
+					</div>
+					<div class="form_add_brick">
+						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
+						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
+						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
+					</div>
+				</div>
+					<div id="kroki">Sposób przygotowania:
+						<div class="form_add_brick"><label for="" class="opis">krok1<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+						<div class="form_add_brick"><label for="" class="opis">krok2<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+						<div class="form_add_brick"><label for="" class="opis">krok3<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+						<div class="form_add_brick"><label for="" class="opis">krok4<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
+					</div>
+					<div id="zdjecia">
+						Zdjęcia:
+						<input type="file">
+						<input type="file">
+						<input type="file">
+						<input type="file">
+						<input type="file">
+					</div>
+				
+			</form>
+		</form>
+	</div>
+</body>
+</html>

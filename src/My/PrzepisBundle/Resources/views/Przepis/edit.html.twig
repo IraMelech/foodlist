@@ -1,6 +1,9 @@
+
+{% extends 'MyPrzepisBundle::layout.html.twig' %}
+{% block content %}
 <h1>Przepis edit</h1>
 
-<form action="{{ path('przepis_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+<form action="{{ path('przepis_update', { 'slug': entity.slug }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
     <p>
         <button type="submit">Edit</button>
@@ -14,9 +17,11 @@
         </a>
     </li>
     <li>
-        <form action="{{ path('przepis_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('przepis_delete', { 'slug': entity.slug }) }}" method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
         </form>
     </li>
 </ul>
+
+{% endblock %}
