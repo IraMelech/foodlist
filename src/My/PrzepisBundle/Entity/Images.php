@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Document
+ * Images
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Document
+class Images
 {
     /**
      * @ORM\Id
@@ -19,12 +19,6 @@ class Document
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     public $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank
-     */
-    public $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -59,7 +53,7 @@ class Document
     protected function getUploadRootDir()
     {
         // the absolute directory path where uploaded
-        // documents should be saved
+        // Imagess should be saved
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
 
@@ -99,7 +93,7 @@ class Document
      * Set przepis
      *
      * @param \My\PrzepisBundle\Entity\Przepis $przepis
-     * @return Document
+     * @return Images
      */
     public function setPrzepis(\My\PrzepisBundle\Entity\Przepis $przepis = null)
     {
@@ -116,5 +110,38 @@ class Document
     public function getPrzepis()
     {
         return $this->przepis;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return Images
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 }

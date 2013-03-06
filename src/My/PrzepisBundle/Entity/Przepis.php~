@@ -48,7 +48,7 @@ class Przepis
     protected $krok;
 
     /**
-     * @ORM\OneToMany(targetEntity="Document", mappedBy="przepis", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Images", mappedBy="przepis", cascade={"all"})
      * */
     public $image;
 
@@ -173,10 +173,10 @@ class Przepis
     /**
      * Add image
      *
-     * @param \My\PrzepisBundle\Entity\Document $image
+     * @param \My\PrzepisBundle\Entity\Images $image
      * @return Przepis
      */
-    public function addImage(\My\PrzepisBundle\Entity\Document $image)
+    public function addImage(\My\PrzepisBundle\Entity\Images $image)
     {
         $this->image[] = $image;
     
@@ -186,9 +186,9 @@ class Przepis
     /**
      * Remove image
      *
-     * @param \My\PrzepisBundle\Entity\Document $image
+     * @param \My\PrzepisBundle\Entity\Images $image
      */
-    public function removeImage(\My\PrzepisBundle\Entity\Document $image)
+    public function removeImage(\My\PrzepisBundle\Entity\Images $image)
     {
         $this->image->removeElement($image);
     }

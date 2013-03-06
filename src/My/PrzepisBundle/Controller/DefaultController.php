@@ -5,7 +5,7 @@ namespace My\PrzepisBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use My\PrzepisBundle\Entity\Document;
+use My\PrzepisBundle\Entity\Images;
 use My\PrzepisBundle\Entity\Przepis;
 use My\PrzepisBundle\Entity\SkladnikPrzepisu;
 use Symfony\Component\HttpFoundation\Request;

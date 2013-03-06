@@ -11,7 +11,6 @@ class ImageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
             ->add('file')
         ;
     }
@@ -19,7 +18,7 @@ class ImageType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'My\PrzepisBundle\Entity\Document'
+            'data_class' => 'My\PrzepisBundle\Entity\Images'
         ));
     }
 
