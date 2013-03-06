@@ -1,36 +1,47 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset=utf-8>
-        <meta name=description content="">
-        <meta name=viewport content="width=device-width, initial-scale=1">
-        <title>{% block title %}{% endblock %}</title>
-        <link rel=author href="humans.txt">
-        <link rel="stylesheet" href="{{ asset('css/style-apperance.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/style-position.css') }}">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="{{ asset('js/select2/select2.js') }}"></script>
-        <link rel="stylesheet" href="{{ asset('js/select2/select2.css') }}">
-        {% block files %}{% endblock %}
-    </head>
-    <body>
+<head>
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/styleapp.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylepos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('js/select2/select2.css') }}" />
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/select2/select2.js') }}"></script>
+</head>
+<body>
+    <div id="menuspace1">
+        <a href="{{ path('index') }}"><span class="icons">&#x30;</span>home</a>
+        <a href="{{ path('przepis') }}"><span class="icons">&#x3e;</span>przeglądaj</a>
+        <a href="{{ path('index') }}"><span class="icons">&#x24;</span>szukaj</a>
+        <a href="{{ path('przepis_new') }}"><span class="icons">&#x49;</span>dodaj przepis</a>
+        <a href="#"><span class="icons">&#x5c;</span>informacje</a>
 
-    <a href="{{ path('index') }}">strona główna</a>
-    <a href="{{ path('przepis_new') }}">dodaj przepis </a>
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        {{ app.user.username }}
-        <a href="{{ path('fos_user_security_logout') }}">wyloguj</a>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-    {% else %}
-        <a href="{{ path('fos_user_security_login') }}">login</a>
-     {% endif %} <div id="body">
-          
-          <div id="main">
-                    {% block content %}
+        <a href="{{ path('fos_user_security_logout') }}"><span class="icons">&#x5a;</span>wyloguj</a>
+
+        {% else %}
+
+        <a href="{{ path('fos_user_security_login') }}"><span class="icons">&#x5a;</span>zaloguj</a>
+
+        {% endif %}
+    </div>
+    <div id="menuspace2">
+            <a href="#" class="iconcog actuallyin">home</a>
+            <a href="#" class="">przeglądaj</a>
+            <a href="#" class="iconsearch ">szukaj</a>
+            <a href="#">odnoścnik4</a>
+            <a href="#">odnoścnik5</a>
+        </div>
+    <div id="content">
+
+        {% block content %}
                       
-                    {% endblock %}
+        {% endblock %}
 
-          </div>
-      </div>
-    </body>
+</body>
 </html>

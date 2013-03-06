@@ -1,8 +1,24 @@
 {% extends 'MyPrzepisBundle::layout.html.twig' %}
 {% block content %}
-<form action="{{ path('search_results') }}" method="get" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
 
-    <input type="submit" value="Szukaj" />
-</form>
+	<form id="search" action="{{ path('search_results') }}" method="get" {{ form_enctype(form) }}>
+					<label>{{ form_label(form.szukaj) }}</label>
+			<div>
+				{{ form_widget(form.szukaj) }}
+                {{ form_rest(form) }}
+			</div>
+			<div>
+				<button type="submit" class="icons">&#x24;</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+	$(document).ready(function(){
+		$('#search select').select2({
+			placeholder: "Wybierz składniki",
+			allowClear: true
+		});
+	})
+	</script>
 {% endblock %}

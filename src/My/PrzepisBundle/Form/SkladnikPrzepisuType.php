@@ -14,7 +14,7 @@ class SkladnikPrzepisuType extends AbstractType
             ->add('skladnik', 'genemu_jqueryselect2_entity', array(
                 'class' => 'My\PrzepisBundle\Entity\Skladnik',
                 'property' => 'nazwa',
-                'multiple' => true,
+                'multiple' => false,
                 'configs' => array(
                     'placeholder' => 'Seleziona almeno una sotto categoria',
             )

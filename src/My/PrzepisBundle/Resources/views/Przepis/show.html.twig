@@ -1,40 +1,42 @@
 {% extends 'MyPrzepisBundle::layout.html.twig' %}
-{% block content %}<h1>Przepis</h1>
+{% block content %}
 
-<table class="record_properties">
-    <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>Nazwa</th>
-            <td>{{ entity.nazwa }}</td>
-        </tr>
-    </tbody>
-</table>
+        
+        <div id="recipe">
+            <div id="images">
 
-{% for e in entity.sp %}
-{{ e.skladnik }}
-{% endfor %}
+                    {% for image in entity.image %}
+                    {% if loop.first %}
+                        <img src="{{ asset('images/') }}{{ image.path }}" alt=""></img>
+                    {% else %}
+                        <div id="images_mini">
+                        <img src="{{ asset('images/') }}{{ image.path }}" alt=""></img>
+                    {% endif %}
+                    {% endfor %}
+                </div>
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('przepis') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('przepis_edit', { 'slug': entity.slug }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
+            </div>
+            <div id="info">
+                <div id="header">{{ entity.nazwa }}</div>
+                <div id="creator">Autor: {{ entity.user }}</div>
+                <div id="ingredients">składniki:
+                    {% for skladnik in entity.sp %}
+                        {{ skladnik.skladnik.nazwa }}
+                    {% endfor %}
+                </div>
+                <div id="steps">
+                    Sposób przygotowania:
+                    {% for krok in entity.krok %}
+
+                        <p>
+                        <span>1</span><span class="iconclock-3">{{ krok.czas }}</span>{{ krok.opis }}</p>
+                            
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         <form action="{{ path('przepis_delete', { 'slug': entity.slug }) }}" method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
         </form>
-    </li>
-</ul>
-
 {% endblock %}

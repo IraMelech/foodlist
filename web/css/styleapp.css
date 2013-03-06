@@ -35,20 +35,10 @@ input,textarea{
 	font-size: 28px;
 
 }
-#menuspace2 h3{
-	margin: 5px 0px 5px 5px;
-	color: #7a7a7a;
-	font-weight: bold;
-	font-size: 11px;
-}
-#menuspace2 a{	
-	margin: 2px 0px 2px 15px;
-	width:100%;
-	display:block;
-}
+
 
 	
-#menuspace1 a, #menuspace2 a
+#menuspace1 a
 {
 	display:block;
 	text-decoration: none;
@@ -59,16 +49,6 @@ input,textarea{
 {
 	color: #fff;
 }
-#menuspace2 a:hover
-{
-	color: #fff;
-}
-#menuspace2
-{
-	font-size: 11px;
-	padding: 20px 0px 0px 20px;
-	z-index: 0;
-}
 #menuspace1
 {
 -moz-box-shadow: -3px -1px 40px #000000;
@@ -76,10 +56,32 @@ input,textarea{
 box-shadow: -3px -1px 40px #000000;
 	z-index: 1;
 }
-/*wyniki wyszukiwania*/
-#content{
+#menuspace2
+{
 	position:relative;
+	padding: 2px 15px;
+	margin: 5px 0px 20px 80px;
+	font-size: 13px;
+	display: block;
+	width: 80%;
+	text-align: left
 }
+#menuspace2 a
+{
+	margin: 0px 10px;
+	text-decoration: none;
+	color: #8e8e8e;
+}
+
+#menuspace2 a:hover
+{
+	color: #000;
+}
+#content
+{
+	padding: 20px;
+}
+/*wyniki wyszukiwania*/
 
 #brick
 {
@@ -97,9 +99,10 @@ box-shadow: -3px -1px 40px #000000;
 	width: inherit;
 }
 #brick p{
-	padding:0;
-	margin: 0px 8px 2px 8px;
+	padding: 0px 8px 2px 8px;
 	color:#000;
+	background-color: #fff;
+	margin:0;
 }
 #brick span{
 	display: block;
@@ -113,20 +116,27 @@ box-shadow: -3px -1px 40px #000000;
 {
 	z-index: 2;
 }
+/*szukanie */
 #search
 {
 	position:relative;
-	top:250px;
+	top:150px;
+	width: 400px;
+	margin:auto;
 }
-#search input[type="text"]{
-	width:400px;
-	height: 30px;
-	padding: 0px 10px;
-	font-size: 17px;
-	border:1px solid #c1c1c1;
+#search div
+{
+	display:block;
+	float:left;
+}
+#search div:first-child{
+	width:360px;
+}
+#search label{
+	display: block;
+	position: relative;
 }
 #search button{
-	position:absolute;
 	border: 0px;
 	height: 32px;
 	background: none;
@@ -134,7 +144,8 @@ box-shadow: -3px -1px 40px #000000;
 	cursor: pointer;
 }
 #recipe{
-	margin:50px auto;
+	padding:50px auto;
+	margin: auto;
 	width:800px;
 
 }
@@ -197,7 +208,6 @@ box-shadow: -3px -1px 40px #000000;
 {
 	display:block;
 	position:relative;
-	top:200px;
 	width:300px;
 	margin: auto;
 	background-color: #2c2c34;
@@ -209,22 +219,16 @@ box-shadow: -3px -1px 40px #000000;
 #login p{
 	margin: 10px 0px;
 }
-#login input[type="text"]
-{
-	margin:auto;
-	width: 200px;
-	height: 25px;
-	padding: 0px 5px;
-	font-size: 15px;
-
-}
+#login input[type="text"],
 #login input[type="password"]
 {
-	margin:auto;
-	width: 200px;
+	margin: auto 10px;
+	width: 150px;
 	height: 25px;
 	padding: 0px 5px;
 	font-size: 15px;
+	float:right;
+
 }
 #login button
 {
@@ -254,7 +258,7 @@ box-shadow: -3px -1px 40px #000000;
 	-moz-box-shadow: 0px 0px 20px #000000;
 	-webkit-box-shadow: 0px 0px 20px #000000;
 	box-shadow: 0px 0px 20px #000000;
-}
+}*/
 /*dodawanie*/
 #add_recipe
 {
@@ -292,7 +296,7 @@ box-shadow: -3px -1px 40px #000000;
 	display: block;
 	width: 500px;
 }
-.form_add_brick input, .form_add_brick textarea
+.form_add_brick input, .form_add_brick textarea, .form_add_brick select
 {
 	display: block;
 }
@@ -305,11 +309,15 @@ box-shadow: -3px -1px 40px #000000;
 	display: inline-block;
 	padding: 0px 2px;
 }
+.skladnik select
+{
+	width:200px;
+}
 .ilosc input
 {
 	width: 70px;
 }
-.miara input{
+.miara select{
 	width: 120px;
 }
 .opis textarea{
@@ -323,7 +331,7 @@ box-shadow: -3px -1px 40px #000000;
 	width: 60px;
 }
 /*przyciski dodawania nowych pól*/
-.add_new_brick a{
+.form_new_field{
 	font-family: 'icons';
 	position: relative;
 	content: "X";

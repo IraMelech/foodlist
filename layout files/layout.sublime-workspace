@@ -4,16 +4,40 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"sele",
+				"select2"
+			],
+			[
+				"se",
+				"select2"
+			],
+			[
+				"sl",
+				"select"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"add",
+				"add_new_brick"
+			],
+			[
 				"ma",
 				"margin"
 			],
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"text",
-				"textarea"
 			],
 			[
 				"fo",
@@ -103,6 +127,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "dodawanie.html",
+			"settings":
+			{
+				"buffer_size": 5965,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "przepis.html",
+			"settings":
+			{
+				"buffer_size": 2609,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "styleapp.css",
+			"settings":
+			{
+				"buffer_size": 5243,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/select2/select2.css",
+			"settings":
+			{
+				"buffer_size": 19659,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -148,6 +204,11 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/a/layout files/stylepos.css",
+		"/C/Users/Bartek/Documents/My Games/Sid Meier's Civilization 5/UserSettings.ini",
+		"/D/gry/Civilization V Gods and Kings/revolt_on.ini",
+		"/D/qtor/B/Downloads/Civilization V - GOTY v1.0.1.675 + Gods and Kings [PC ~ ENG FRA DEU ITA JAP KOR POL RUS ESP][REVOLT][Colombo-BT.i2p]/Civilization V - GOTY v1.0.1.675 + Gods and Kings [PC ~ ENG FRA DEU ITA JAP KOR POL RUS ESP][REVOLT]/revolt.nfo",
+		"/C/Users/Bartek/Documents/My Games/Sid Meier's Civilization 5/config.ini",
 		"/C/xampp/htdocs/adocs/structure.xml",
 		"/C/Program Files (x86)/Steam/SteamApps/bartholomeus2/counter-strike source/cstrike/cfg/buypresets_ct.vdf",
 		"/C/xampp/htdocs/a layout/szukaj.html",
@@ -193,7 +254,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -208,6 +269,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"content",
+			"select2-container",
+			"4",
+			"font-family",
+			"icons",
+			"\"",
+			">",
+			"<",
+			">",
+			"<",
+			"lang",
+			"\"",
+			"==",
+			"\"",
+			">",
+			"<",
+			"10",
 			"75",
 			"-1",
 			"content",
@@ -258,13 +336,124 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "dodawanie.html",
+					"settings":
+					{
+						"buffer_size": 5965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1379,
+								1379
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1385.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "przepis.html",
+					"settings":
+					{
+						"buffer_size": 2609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1346,
+								1346
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 142.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 2,
+					"file": "styleapp.css",
+					"settings":
+					{
+						"buffer_size": 5243,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 729.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/select2/select2.css",
+					"settings":
+					{
+						"buffer_size": 19659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 172.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -296,7 +485,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.66,
 			1.0
 		],
 		"rows":
@@ -359,6 +548,6 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 140.0,
+	"side_bar_width": 229.0,
 	"status_bar_visible": true
 }

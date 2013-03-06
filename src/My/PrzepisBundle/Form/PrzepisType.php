@@ -21,7 +21,7 @@ class PrzepisType extends AbstractType
                     'allow_delete' => true,
                     'prototype' => true,
                     'by_reference' => false,
-                    'label' => 'Skladniki',
+                    'label' => 'Składniki:',
                     ));
         $builder->add('krok', 'collection', array(
                     'type' => new KrokType(),
@@ -29,7 +29,7 @@ class PrzepisType extends AbstractType
                     'allow_delete' => true,
                     'prototype' => true,
                     'by_reference' => false,
-                    'label' => 'Kroki',
+                    'label' => 'Sposób przygotowania:',
                     ));
         $builder->add('image', 'collection', array(
                     'type' => new ImageType(),
@@ -37,7 +37,7 @@ class PrzepisType extends AbstractType
                     'allow_delete' => true,
                     'prototype' => true,
                     'by_reference' => false,
-                    'label' => 'zjecie',
+                    'label' => 'Zdjęcia:',
                     ));
     }
 

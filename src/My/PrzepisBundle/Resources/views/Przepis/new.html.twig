@@ -1,66 +1,85 @@
 {% extends 'MyPrzepisBundle::layout.html.twig' %}
-{% block title %}Dodawanie przepisu{% endblock %}
-{% block files %}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-<link rel="stylesheet" href="{{ asset('js/select2/select2.css') }}">
-{% endblock %}
+{% block title %}Dodaj przepis{% endblock %}
 {% block content %}
-{% include 'MyPrzepisBundle:Przepis:menu.html.twig' %}
 
-<h1>Przepis creation</h1>
+        <form id="add_recipe" action="{{ path('przepis_create') }}" method="post" {{ form_enctype(form) }}>
+                <label id="nazwa">{{ form_label(form.nazwa) }}: {{ form_widget(form.nazwa) }}</label>
+                <div id="skladniki" class="add_new_brick" data-prototype="
+                &lt;div class=&quot;form_add_brick&quot;&gt;
+                        &lt;div class=&quot;iconremove&quot;&gt;usun&lt;/div&gt;
+                        &lt;label for=&quot;skladnik&quot; class=&quot;skladnik&quot;&gt;Wybierz skladnik:
 
-<form action="{{ path('przepis_create') }}" method="post" {{ form_enctype(form) }}>
-    
-    {{ form_widget(form) }}
-    {{ form_rest(form) }}
+                            {{ form_widget(form.sp.vars.prototype.skladnik)|e }}
 
-    <a href="#" id="add_ingredient">ingredient</a>
-    <a href="#" id="add_step">step</a>
-    <a href="#" id="add_image">image</a>
-    <button type="submit">Create</button>
-    </p>
-</form>
+                        &lt;/label&gt;
+                        &lt;label for=&quot;ilosc&quot; class=&quot;ilosc&quot;&gt;Podaj ilość
+                            {{ form_widget(form.sp.vars.prototype.ilosc)|e }}
 
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('przepis') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
-<script>
+                        &lt;/label&gt;
+                        &lt;/div&gt;
+                
+                    ">
+                    {{ form_label(form.sp) }}
+                    {{ form_widget(form.sp) }}
+                    <a class="form_new_field"href="#">&#x58;</a>
+                </div>
+                    <div id="kroki" class="add_new_brick" data-prototype="
+                        &lt;div class=&quot;form_add_brick&quot;&gt;&lt;div class=&quot;iconremove&quot;&gt;usun&lt;/div&gt;&lt;label for=&quot;&quot; class=&quot;opis&quot;&gt;krok
 
-var SkladnikCollectionHolder = $('#przepis_sp');
-var SkladnikPrototype = SkladnikCollectionHolder.attr('data-prototype');
-var SkladnikAddLink = $('#add_ingredient');
+                            {{ form_widget(form.krok.vars.prototype.opis)|e }}
+                        
+                        &lt;/label&gt;
+                        &lt;label for=&quot;&quot; class=&quot;czas&quot;&gt;czas:
 
-var KrokCollectionHolder = $('#przepis_krok');
-var KrokPrototype = KrokCollectionHolder.attr('data-prototype');
-var KrokAddLink = $('#add_step');
+                            {{ form_widget(form.krok.vars.prototype.czas)|e }}
 
-var ImageCollectionHolder = $('#przepis_image');
-var ImagePrototype = ImageCollectionHolder.attr('data-prototype');
-var ImageAddLink = $('#add_image');
+                        &lt;/label&gt;&lt;/div&gt;
 
-jQuery(document).ready(function() {
-    SkladnikAddLink.on('click', function(e){
-        e.preventDefault();
-        var SkladnikNewPrototype = SkladnikPrototype.replace(/__name__label__/g, SkladnikCollectionHolder.children().length + 1);
-        SkladnikNewPrototype = SkladnikNewPrototype.replace(/__name__/g, SkladnikCollectionHolder.children().length);
-        SkladnikCollectionHolder.append(SkladnikNewPrototype);
-    });
-    KrokAddLink.on('click', function(e){
-        e.preventDefault();
-        var KrokNewPrototype = KrokPrototype.replace(/__name__/g, KrokCollectionHolder.children().length);
-        KrokCollectionHolder.append(KrokNewPrototype);
-    });
-    ImageAddLink.on('click', function(e){
-        e.preventDefault();
-        var ImageNewPrototype = ImagePrototype.replace(/__name__/g, ImageCollectionHolder.children().length);
-        ImageCollectionHolder.append(ImageNewPrototype);
-    });
-});
-</script>
-<script src="{{ asset('js/select2/select2.js') }}"></script>
+                    ">
+                    {{ form_label(form.krok) }}
+                    {{ form_widget(form.krok) }}
+
+                    <a class="form_new_field"href="#">&#x49;</a>
+                    </div>
+                    <div id="zdjecia" class="add_new_brick"data-prototype="
+                        
+                        {{ form_widget(form.image.vars.prototype.name)|e }}
+                        {{ form_widget(form.image.vars.prototype.file)|e }}
+
+                    ">
+
+                        {{ form_label(form.image) }}
+                        {{ form_widget(form.image) }}
+
+                    <a class="form_new_field"href="#">&#x65;</a>
+                    </div>
+
+                {{ form_widget(form) }}
+                {{ form_rest(form) }}
+                <button type="submit"class="iconcheckmark">Zapisz</button>
+                
+            </form>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var click = 0;
+            $(".add_new_brick a").on("click", function(e){
+                e.preventDefault();
+                var holder=$(this).parent();
+                var prototype=holder.attr("data-prototype");
+                prototype = prototype.replace(/__name__/g, click++);
+                $(this).before(prototype);
+                $('.skladnik select, .miara select').select2();
+                
+                $(".add_new_brick .iconremove").on("click", function(e){
+                    e.preventDefault();
+                    var holder=$(this).parent();
+                    holder.remove();
+                });
+            });
+
+            
+        });
+    </script>
 {% endblock %}

@@ -5,9 +5,12 @@
 	<meta name=description content="">
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<title></title>
-	<link rel="stylesheet" href="styleapp.css">
-	<link rel="stylesheet" href="stylepos.css">
+	<link rel="stylesheet" href="../web/css/styleapp.css">
+	<link rel="stylesheet" href="../web/css/stylepos.css">
 	<link rel="stylesheet" href="css/fonts/style.css" />
+	<link rel="stylesheet" href="js/select2/select2.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/select2/select2.js"></script>
 	<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 </head>
 <body>
@@ -20,8 +23,7 @@
 		<a href="#"><span class="icons">&#x5c;</span>informacje</a>
 	</div>
 	<div id="menuspace2">
-		<h3>Konto</h3>
-		<a href="#" class="iconcog actuallyin">home</a>
+		<a href="#" class="iconcog">home</a>
 		<a href="#" class="">przeglądaj</a>
 		<a href="#" class="iconsearch ">szukaj</a>
 		<a href="#">odnoścnik4</a>
@@ -30,11 +32,30 @@
 	</div>
 	<div id="content">
 		<form id="search" action="asd">
+					<label>Wybierz składniki, na które masz ochote:</label>
+			<div>
 
-			<p>Wybierz składniki, na które masz ochote</p>
-			<input type="text">
-			<button type="submit" class="icons">&#x24;</button>
+					<select multiple="true">
+						<option value="kurcze">opcja1</option>
+						<option value="pieczone">opcja2</option>
+						<option value="jaciebei">opcja3</option>
+						<option value="">opcja4</option>
+					</select>
+			</div>
+			<div>
+				<button type="submit" class="icons">&#x24;</button>
+			</div>
 		</form>
 	</div>
+
+	<script>
+	$(document).ready(function(){
+		$('#search select').select2({
+			placeholder: "Wybierz składniki",
+			allowClear: true
+		});
+		alert('kurczaki');
+	})
+	</script>
 </body>
 </html>

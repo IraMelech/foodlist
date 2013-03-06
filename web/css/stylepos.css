@@ -14,15 +14,10 @@ body{
 }
 #menuspace2
 {
-	position:fixed;
-	margin-left: 80px;
-	width:170px;
-	min-height: 1980px;
-	float:left;
-	background-color: #2c2c34;
+	position: relative;
 }
 #content
 {
 	text-align: center;
-	margin: 0px 10px 0px 280px;
+	margin: 0px 10px 0px 80px;
 }

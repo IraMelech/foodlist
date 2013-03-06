@@ -1,0 +1,23 @@
+{% extends 'MyPrzepisBundle::layout.html.twig' %}
+{% block content %}
+	{% if error %}
+		<div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+	{% endif %}
+	<form id="login" action="{{ path("fos_user_security_check") }}" method="post">
+			Zaloguj się i skorzystaj z wszystkich funkcji serwisu.
+			<div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+				<p><label class="iconuser">{{ 'security.login.username'|trans({},'FOSUserBundle') }}</label><input type="text" id="username" name="_username" value="{{last_username }}" /></p>
+
+				<p><label class="iconkey-2">{{ 'security.login.password'|trans({},'FOSUserBundle') }}</label><input type="password"  name="_password" /></p>
+				<button id="_submit" name="_submit" type="submit" >{{'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
+			</div>
+
+			Jeśli nie masz konta, zarejestruj się.
+		</form>
+			{% for key, message in app.session.getFlashes() %}
+				<div class="{{ key }}">
+			{{ message|trans({}, 'FOSUserBundle') }}
+		{% endfor %}
+{% endblock %}

@@ -5,10 +5,12 @@
 	<meta name=description content="">
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<title></title>
-	<link rel="stylesheet" href="styleapp.css">
-	<link rel="stylesheet" href="stylepos.css">
+	<link rel="stylesheet" href="../web/css/styleapp.css">
+	<link rel="stylesheet" href="../web/css/stylepos.css">
 	<link rel="stylesheet" href="css/fonts/style.css" />
+	<link rel="stylesheet" href="js/select2/select2.css" />
 	<script src="js/jquery.js"></script>
+	<script src="js/select2/select2.js"></script>
 	<!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
 </head>
 <body>
@@ -21,7 +23,6 @@
 		<a href="#"><span class="icons">&#x5c;</span>informacje</a>
 	</div>
 	<div id="menuspace2">
-		<h3>Konto</h3>
 		<a href="#" class="iconcog actuallyin">home</a>
 		<a href="#" class="">przeglądaj</a>
 		<a href="#" class="iconsearch ">szukaj</a>
@@ -30,10 +31,13 @@
 		
 	</div>
 	<div id="content">
+		
 		<form id="add_recipe"action="asd">
 				<label id="nazwa">Tytuł: <input type="text"></label>
 				<div id="skladniki" class="add_new_brick" data-prototype="&lt;div class=&quot;form_add_brick&quot;&gt;&lt;div class=&quot;iconremove&quot;&gt;usun&lt;/div&gt;
-						&lt;label for=&quot;skladnik&quot; class=&quot;skladnik&quot;&gt;Wybierz skladnik:&lt;input type=&quot;text&quot;&gt;&lt;/label&gt;
+						&lt;label for=&quot;skladnik&quot; class=&quot;skladnik&quot;&gt;Wybierz skladnik:&lt;select&gt;
+						&lt;option value=&quot;&quot;&gt;opcja1&lt;/option&gt;
+						&lt;/select&gt;&lt;/label&gt;
 						&lt;label for=&quot;ilosc=&quot; class=&quot;ilosc&quot;&gt;Podaj ilość:&lt;input type=&quot;text=&quot;&gt;&lt;/label&gt;
 						&lt;label for=&quot;miara&quot; class=&quot;miara&quot;&gt;Wybierz miare&lt;input type=&quot;text&quot;&gt;&lt;/label&gt;
 					&lt;/div&gt;">
@@ -46,9 +50,22 @@
 					div#zdjecia>(div.form_add_brick>input[type="file"])*5-->
 					<div class="form_add_brick">
 						<div class="iconremove">usun</div>
-						<label for="skladnik" class="skladnik">Wybierz skladnik:<input type="text"></label>
+						<label for="skladnik" class="skladnik">Wybierz skladnik:<select>
+						<option value="">opcja1</option>
+						<option value="">opcja2</option>
+						<option value="">opcja3</option>
+						<option value="">opcja4</option>
+						</select>
+						</label>
 						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
-						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
+						<label for="miara" class="miara">Wybierz miare
+						<select>
+						<option value="">opcja1</option>
+						<option value="">opcja2</option>
+						<option value="">opcja3</option>
+						<option value="">opcja4</option>
+						</select>
+						</label>
 					</div>
 					<div class="form_add_brick">
 						<div class="iconremove">usun</div>
@@ -68,7 +85,7 @@
 						<label for="ilosc" class="ilosc">Podaj ilość:<input type="text"></label>
 						<label for="miara" class="miara">Wybierz miare<input type="text"></label>
 					</div>
-					<a href="#">&#x58;</a>
+					<a class="form_new_field"href="#">&#x58;</a>
 				</div>
 					<div id="kroki" class="add_new_brick">Sposób przygotowania:
 						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok1<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
@@ -76,7 +93,7 @@
 						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok3<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
 						<div class="form_add_brick"><div class="iconremove">usun</div><label for="" class="opis">krok4<textarea name="" id="" cols="30" rows="10"></textarea></label><label for="" class="czas">czas:<input type="text"></label></div>
 
-					<a href="#">&#x49;</a>
+					<a class="form_new_field"href="#">&#x49;</a>
 					</div>
 					<div id="zdjecia" class="add_new_brick">
 						Zdjęcia:
@@ -86,7 +103,7 @@
 						<input type="file">
 						<input type="file">
 
-					<a href="#">&#x65;</a>
+					<a class="form_new_field"href="#">&#x65;</a>
 					</div>
 				<button type="submit"class="iconcheckmark">Zapisz</button>
 				
@@ -100,6 +117,9 @@
 				var holder=$(this).parent();
 				var prototype=holder.attr("data-prototype");
 				$(this).before(prototype);
+				$('.skladnik select, .miara select').select2({
+					placeholder: "wybierz",
+				});
 				
 				$(".add_new_brick .iconremove").on("click", function(e){
 					e.preventDefault();

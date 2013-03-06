@@ -25,6 +25,7 @@ class DefaultController extends Controller
 				->add('szukaj', 'entity', array(
 					'multiple' => true,
 					'class' => 'MyPrzepisBundle:Skladnik',
+					'label' => 'Wybierz składniki, na które masz ochote:',
 					))
 				->getForm();
 
