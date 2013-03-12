@@ -1,7 +1,7 @@
 {% extends 'MyPrzepisBundle::layout.html.twig' %}
 {% block content %}
 
-	<form id="search" action="{{ path('search_results') }}" method="get" {{ form_enctype(form) }}>
+	<form id="search" action="{{ path('test') }}" method="get" {{ form_enctype(form) }}>
 					<label>{{ form_label(form.szukaj) }}</label>
 			<div>
 				{{ form_widget(form.szukaj) }}
@@ -12,7 +12,6 @@
 			</div>
 		</form>
 	</div>
-
 	<script>
 	$(document).ready(function(){
 		$('#search select').select2({

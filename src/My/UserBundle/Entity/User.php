@@ -20,6 +20,12 @@ class User extends BaseUser
      * */
     protected $przepis;
 	
+
+    /**
+    * @ORM\OneToMany(targetEntity="My\PlanBundle\Entity\Lista", mappedBy="user", cascade={"all"})
+    * */
+    protected $listy;
+    
 	public function __construct()
 	{
 		parent::__construct();
@@ -66,5 +72,61 @@ class User extends BaseUser
     public function getPrzepis()
     {
         return $this->przepis;
+    }
+
+    /**
+     * Add przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     * @return User
+     */
+    public function addPrzepi(\My\PrzepisBundle\Entity\Przepis $przepis)
+    {
+        $this->przepis[] = $przepis;
+    
+        return $this;
+    }
+
+    /**
+     * Remove przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     */
+    public function removePrzepi(\My\PrzepisBundle\Entity\Przepis $przepis)
+    {
+        $this->przepis->removeElement($przepis);
+    }
+
+    /**
+     * Add listy
+     *
+     * @param \My\PlanBundle\Entity\Lista $listy
+     * @return User
+     */
+    public function addListy(\My\PlanBundle\Entity\Lista $listy)
+    {
+        $this->listy[] = $listy;
+    
+        return $this;
+    }
+
+    /**
+     * Remove listy
+     *
+     * @param \My\PlanBundle\Entity\Lista $listy
+     */
+    public function removeListy(\My\PlanBundle\Entity\Lista $listy)
+    {
+        $this->listy->removeElement($listy);
+    }
+
+    /**
+     * Get listy
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getListy()
+    {
+        return $this->listy;
     }
 }

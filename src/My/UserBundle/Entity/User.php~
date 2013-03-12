@@ -20,8 +20,57 @@ class User extends BaseUser
      * */
     protected $przepis;
 	
+
+    /**
+    * @ORM\OneToMany(targetEntity="My\PlanBundle\Lista", mappedBy="user", cascade={"all"})
+    * */
+    protected $listy;
+    
 	public function __construct()
 	{
 		parent::__construct();
 	}
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     * @return User
+     */
+    public function addPrzepis(\My\PrzepisBundle\Entity\Przepis $przepis)
+    {
+        $this->przepis[] = $przepis;
+    
+        return $this;
+    }
+
+    /**
+     * Remove przepis
+     *
+     * @param \My\PrzepisBundle\Entity\Przepis $przepis
+     */
+    public function removePrzepis(\My\PrzepisBundle\Entity\Przepis $przepis)
+    {
+        $this->przepis->removeElement($przepis);
+    }
+
+    /**
+     * Get przepis
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPrzepis()
+    {
+        return $this->przepis;
+    }
 }

@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
             new My\UserBundle\MyUserBundle(),
             new My\PrzepisBundle\MyPrzepisBundle(),
+            new My\PlanBundle\MyPlanBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

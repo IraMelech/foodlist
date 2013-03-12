@@ -1,20 +1,31 @@
 {% extends 'MyPrzepisBundle::layout.html.twig' %}
 {% block content %}
 
-    {% for entity in entities %}
-        <a href="{{ path('przepis_show', { 'slug': entity.slug }) }}"id="brick">
-            {% for img in entity.image %}
-                {% if loop.first %}
-                    <img src="{{ asset('images/') }}{{ img.path }}" alt=""></img>
-                {% endif %}
-            {% endfor %}
-            <p>{{entity.nazwa}}</p>
-            <span>skladniki: 
-                {% for skl in entity.sp %}
-                    {{ skl.skladnik.nazwa }}
+    {% for e in entities %}
+        {% for entity in e %}
+            
+            <a href="{{ path('przepis_show', { 'slug': entity.slug }) }}"id="brick">
+                {% for img in entity.image %}
+                    {% if loop.first %}
+                        <img src="{{ asset('images/') }}{{ img.path }}" alt=""></img>
+                    {% endif %}
                 {% endfor %}
-            </span>
-        </a>
-    {% endfor %}
+                <p>{{entity.nazwa}}</p>
+                <span>skladniki: 
+                    {% for skl in entity.sp %}
+                    {% if loop.first %}
 
+                    {% else %}
+                    ,
+                    {% endif %}
+                        {{ skl.skladnik.nazwa }}
+                    {% endfor %}
+                </span>
+            </a>
+            
+        {% endfor %}
+    {% endfor %}
+{% for chuj in data %}
+    {{chuj.id}}
+{% endfor %}
 {% endblock %}

@@ -15,9 +15,6 @@ class SkladnikPrzepisuType extends AbstractType
                 'class' => 'My\PrzepisBundle\Entity\Skladnik',
                 'property' => 'nazwa',
                 'multiple' => false,
-                'configs' => array(
-                    'placeholder' => 'Seleziona almeno una sotto categoria',
-            )
             )) 
             ->add('ilosc','text')
         ;

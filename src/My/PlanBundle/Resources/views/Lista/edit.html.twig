@@ -1,0 +1,22 @@
+<h1>Lista edit</h1>
+
+<form action="{{ path('lista_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('lista') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('lista_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

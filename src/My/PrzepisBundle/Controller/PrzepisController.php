@@ -118,7 +118,7 @@ class PrzepisController extends Controller
      * Displays a form to edit an existing Przepis entity.
      *
      * @Route("/edit/{slug}", name="przepis_edit")
-     * @Template("MyPrzepisBundle:Przepis:new.html.twig")
+     * @Template()
      */
     public function editAction($slug)
     {
@@ -155,9 +155,21 @@ class PrzepisController extends Controller
      */
     public function updateAction(Request $request, $slug)
     {
+        $orginalSp = array();
+
+
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('MyPrzepisBundle:Przepis')->findOneBySlug($slug);
+
+        foreach ($entity->getSp() as $toRemove) {
+            $em->remove($toRemove);
+            $em->flush();
+        }
+        foreach ($entity->getKrok() as $toRemove) {
+            $em->remove($toRemove);
+            $em->flush();
+        }
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Przepis entity.');
@@ -168,15 +180,21 @@ class PrzepisController extends Controller
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
+            foreach ($entity->getSp() as $skladnik) {
+                $skladnik->setPrzepis($entity);
+            }
+            foreach ($entity->getKrok() as $krok) {
+                $krok->setPrzepis($entity);
+            }
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('przepis_edit', array('slug' => $slug)));
+            // return $this->redirect($this->generateUrl('przepis_edit', array('slug' => $slug)));
         }
 
         return array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'form'         => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }

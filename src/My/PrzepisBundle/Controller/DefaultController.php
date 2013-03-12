@@ -52,7 +52,7 @@ class DefaultController extends Controller
 	}
 	 /**
      * @Route("/results", name="search_results")
-     * @Template()
+     * @Template("MyPrzepisBundle:Przepis:index.html.twig")
      */
 	public function resultsAction(Request $request)
 	{
@@ -73,10 +73,49 @@ class DefaultController extends Controller
 
 	            
 				return array(
-					'results' => $results,
+					'entities' => $results,
 		            'data' => $data,
 		        );	
-		        }
+			}
+	}
+	 /**
+     * @Route("/test", name="test")
+     * @Template("MyPrzepisBundle:Default:results.html.twig")
+     */
+	public function testAction(Request $request)
+	{			
+				$form = $this->createFormBuilder()
+				->add('szukaj', 'entity', array(
+					'multiple' => true,
+					'class' => 'MyPrzepisBundle:Skladnik',
+					))
+				->getForm();
+
+				if ($request->isMethod('GET')) {
+					$form->bind($request);
+						$elements = '';
+			            $data = $form->getData();
+			            $data = $data['szukaj'];
+			            $i=0;
+			            foreach ($data as $d) {
+			            	if ($i == 0){
+			            		$elements = ' sp.skladnik = '.$d->getId();
+			            		$i++;
+			        		}
+			        		else {
+			        			$elements = $elements . ' OR sp.skladnik = '.$d->getId();
+			        		}
+			            }
+						$em = $this->getDoctrine()->getEntityManager();
+						$query = $em->createQuery(
+						    'SELECT sp, count(sp) c FROM MyPrzepisBundle:SkladnikPrzepisu sp WHERE '.$elements.' GROUP BY sp.przepis HAVING c>0 ORDER BY c DESC'
+						);
+				}
+
+				$products = $query->getResult();
+		        return array(
+		        		'entities' => $products
+		        	);
 	}
 
 }

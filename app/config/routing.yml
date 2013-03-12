@@ -1,3 +1,8 @@
+my_plan:
+    resource: "@MyPlanBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 my_przepis:
     resource: "@MyPrzepisBundle/Controller/"
     type:     annotation

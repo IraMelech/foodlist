@@ -41,7 +41,10 @@ class SkladnikPrzepisu
     private $ilosc;
 
 
-
+    public function __toString()
+    {
+        return $this->skladnik->getNazwa();
+    }
     /**
      * Get id
      *
@@ -121,16 +124,5 @@ class SkladnikPrzepisu
         return $this->przepis;
     }
 
-    /**
-     * Get przepis by id 
-     *
-     * @return \My\PrzepisBundle\Entity\Przepis 
-     */
-    public function getPrzepisById($id)
-    {
-        if ($this->id == $id)
-        {
-            return $this->przepis;        
-        }
-    }
+    
 }

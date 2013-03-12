@@ -29,6 +29,11 @@ class Skladnik
     private $nazwa;
 
     /**
+    * @ORM\OneToMany(targetEntity="My\PlanBundle\Entity\SkladnikiListy", mappedBy="skladnik", cascade={"all"})
+    * */
+    protected $listy;
+    
+    /**
      * @ORM\OneToMany(targetEntity="SkladnikPrzepisu" , mappedBy="skladnik" , cascade={"all"})
      * */
     protected $sp;
@@ -108,5 +113,38 @@ class Skladnik
     public function getSp()
     {
         return $this->sp;
+    }
+
+    /**
+     * Add listy
+     *
+     * @param \My\PlanBundle\SkladnikiListy $listy
+     * @return Skladnik
+     */
+    public function addListy(\My\PlanBundle\Entity\SkladnikiListy $listy)
+    {
+        $this->listy[] = $listy;
+    
+        return $this;
+    }
+
+    /**
+     * Remove listy
+     *
+     * @param \My\PlanBundle\SkladnikiListy $listy
+     */
+    public function removeListy(\My\PlanBundle\Entity\SkladnikiListy $listy)
+    {
+        $this->listy->removeElement($listy);
+    }
+
+    /**
+     * Get listy
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getListy()
+    {
+        return $this->listy;
     }
 }

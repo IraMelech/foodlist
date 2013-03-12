@@ -35,7 +35,7 @@ class Images
      * @ORM\JoinColumn(name="przepis_id", referencedColumnName="id")
      * */
     protected $przepis;
-	
+    
     public function getAbsolutePath()
     {
         return null === $this->path

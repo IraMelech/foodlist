@@ -1,0 +1,55 @@
+<?php
+
+namespace My\PlanBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Lista
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Lista
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nazwa", type="string", length=255)
+     */
+    private $nazwa;
+
+
+    /**
+    * @ORM\OneToMany(targetEntity="PrzepisyListy", mappedBy="lista", cascade={"all"})
+    * */
+    protected $przepisy;
+
+
+    /**
+    * @ORM\OneToMany(targetEntity="SkladnikiListy", mappedBy="lista", cascade={"all"})
+    * */
+    protected $skladniki;
+    
+
+    /**
+    * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\User", inversedBy="Listy")
+    * */
+    protected $user;
+    
+    public function __toString()
+    {
+        return $this->nazwa;
+    }
+
+
+}

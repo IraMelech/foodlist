@@ -1,0 +1,42 @@
+<?php
+
+namespace My\PlanBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PrzepisyListy
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class PrzepisyListy
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Lista", inversedBy="przepisy")
+    * */
+    protected $lista;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="My\PrzepisBundle\Entity\Przepis", inversedBy="listy")
+    * @ORM\JoinColumn(name="przepis_id", referencedColumnName="id")
+    * */
+    protected $przepis;
+    
+    public function __toString()
+    {
+        return $this->przepis->getNazwa;
+    }
+    
+    
+}

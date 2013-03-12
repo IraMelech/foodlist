@@ -53,6 +53,11 @@ class Przepis
     public $image;
 
     /**
+    * @ORM\OneToMany(targetEntity="My\PlanBundle\Entity\PrzepisyListy", mappedBy="przepis", cascade={"all"})
+    * */
+    protected $listy;
+    
+    /**
      * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\User", inversedBy="przepis")
      * */
     protected $user;
@@ -247,5 +252,38 @@ class Przepis
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add listy
+     *
+     * @param \My\PlanBundle\Entity\PrzepisyListy $listy
+     * @return Przepis
+     */
+    public function addListy(\My\PlanBundle\Entity\PrzepisyListy $listy)
+    {
+        $this->listy[] = $listy;
+    
+        return $this;
+    }
+
+    /**
+     * Remove listy
+     *
+     * @param \My\PlanBundle\Entity\PrzepisyListy $listy
+     */
+    public function removeListy(\My\PlanBundle\Entity\PrzepisyListy $listy)
+    {
+        $this->listy->removeElement($listy);
+    }
+
+    /**
+     * Get listy
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getListy()
+    {
+        return $this->listy;
     }
 }

@@ -1,13 +1,11 @@
 
-{% extends 'MyPrzepisBundle::layout.html.twig' %}
-{% block content %}
-{% for result in results %}
-<a href="{{ path('przepis_show', { 'slug': result.slug }) }}">
-{{ result.id }}
-{{ result. nazwa }}
-</a>
-{% for skladniki in result.sp %}
-{{skladniki.skladnik.nazwa }}
+{% for entity in entities %}
+{% for entit in entity %}
+	{% if loop.first %}
+	{{ entit.przepis }}
+	{% else %}
+	{{ entit }}
+	{% endif %}
+
 {% endfor %}
 {% endfor %}
-{% endblock %}
