@@ -63,20 +63,32 @@ class DefaultController extends Controller
 					))
 				->getForm();
 
-		if ($request->isMethod('GET')) {
-			$form->bind($request);
+				if ($request->isMethod('GET')) {
+					$form->bind($request);
+						$elements = '';
+			            $data = $form->getData();
+			            $data = $data['szukaj'];
+			            $i=0;
+			            foreach ($data as $d) {
+			            	if ($i == 0){
+			            		$elements = ' sp.skladnik = '.$d->getId();
+			            		$i++;
+			        		}
+			        		else {
+			        			$elements = $elements . ' OR sp.skladnik = '.$d->getId();
+			        		}
+			            }
+						$em = $this->getDoctrine()->getEntityManager();
+						$query = $em->createQuery(
+						    'SELECT sp, count(sp) c FROM MyPrzepisBundle:SkladnikPrzepisu sp WHERE '.$elements.' GROUP BY sp.przepis HAVING c>0 ORDER BY c DESC'
+						);
+				}
 
-	            $data = $form->getData();
-	            $data = $data['szukaj'];
-	            $search = new Search;
-	            $results = $search->search($data);
-
-	            
-				return array(
-					'entities' => $results,
-		            'data' => $data,
-		        );	
-			}
+				$products = $query->getResult();
+		        return array(
+		        		'entities' => $products
+		        	);
+	}
 	}
 	 /**
      * @Route("/test", name="test")
